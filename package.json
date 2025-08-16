@@ -1,0 +1,26 @@
+{
+  "name": "namastereactstart",
+  "version": "1.0.0",
+  "description": "React App",
+  "homepage": "https://github.com/deeksha97gupta/namasteReactStart#readme",
+  "bugs": {
+    "url": "https://github.com/deeksha97gupta/namasteReactStart/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deeksha97gupta/namasteReactStart.git"
+  },
+  "license": "ISC",
+  "author": "Deeksha Gupta",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
