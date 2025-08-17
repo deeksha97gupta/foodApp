@@ -1,8 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-
-const restroData = [
+export const restroData = [
     {
         "info": {
             "id": "234875",
@@ -783,54 +779,4 @@ const restroData = [
             "type": "WEBLINK"
         }
     }
-]
-
-const Header = () => {
-    return (
-        <div className="header">
-            <img className="logo" src="https://marketplace.canva.com/EAFaFUz4aKo/3/0/1600w/canva-yellow-abstract-cooking-fire-free-logo-tn1zF-_cG9c.jpg"/>
-            <div className="nav-link">
-                <h3 className="nav-data">Home</h3>
-                <h3 className="nav-data">About Us</h3>
-                <h3 className="nav-data">Contact Us</h3>
-                <h3 className="nav-data">Cart</h3>
-            </div>
-        </div>
-    )
-}
-
-const RestroCard = ({ restroInfo }) => {
-    const { info } = restroInfo || {};
-    const { name, cloudinaryImageId } = info || {};
-    return (
-        <div className="restro-card">
-            <img className="card-img" src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`} />
-            <hr />
-            <div className="card-body">
-                <p>{name}</p>
-            </div>
-        </div>
-    )
-}
-
-const RestroContainer = () => {
-    return (
-        <div>
-            <div>Search</div>
-            <div className="restro-data">
-                {restroData.map(data => <RestroCard key={data.info.id} restroInfo={data} />)}
-            </div>
-        </div>
-    )
-}
-
-const AppContainer = () => {
-    return (
-       <div>
-        <Header />
-        <RestroContainer />
-       </div>
-    )
-}
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppContainer />);
+];
