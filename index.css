@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #000000;
+}
+
+.logo {
+    width: 100px;
+}
+
+.nav-link {
+    display: flex;
+    padding: 5px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.nav-data {
+    padding: 5px;
+    margin: 5px;
+}
+
+.restro-card {
+    width: 150px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background: lightgrey;
+}
+
+.restro-card:hover {
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-body {
+    margin-top: 0px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #333;
+  margin: 5px 0;
+}
