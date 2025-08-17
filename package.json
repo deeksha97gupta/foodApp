@@ -12,7 +12,7 @@
   },
   "license": "ISC",
   "author": "Deeksha Gupta",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",

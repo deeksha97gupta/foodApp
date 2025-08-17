@@ -817,7 +817,9 @@ const RestroContainer = () => {
     return (
         <div>
             <div>Search</div>
-            {restroData.map(data => <RestroCard key={data.info.id} restroInfo={data} />)}
+            <div className="restro-data">
+                {restroData.map(data => <RestroCard key={data.info.id} restroInfo={data} />)}
+            </div>
         </div>
     )
 }
