@@ -57,9 +57,13 @@ hr {
 
 .shimmer-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .shimmer-card {
     width: 150px;
+    height: 250px;
+    padding: 10px;
     background: lightgrey;
+    margin: 10px;
 }
