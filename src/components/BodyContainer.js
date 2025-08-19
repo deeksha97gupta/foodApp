@@ -5,6 +5,8 @@ import Shimmer from "./Shimmer"
 
 const BodyContainer = () => {
     const [newRestroList, setNewRestroList] = useState([]);
+     const [filteredRestroList, setFilteredRestroList] = useState([]);
+    const [searchValue, setSearchValue] = useState('');
     useEffect(() => {
         fetchData();
     }, [])
@@ -15,6 +17,7 @@ const BodyContainer = () => {
         const json = await data.json();
         const dynamicData = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setNewRestroList(dynamicData);
+        setFilteredRestroList(dynamicData);
     }
     if (newRestroList.length === 0) {
        return <Shimmer />
@@ -22,6 +25,25 @@ const BodyContainer = () => {
     return (
         <div>
             <div>
+                <input 
+                    type="text"
+                    className="input-text"
+                    value={searchValue}
+                    onChange={(evt) => setSearchValue(evt.target.value)}
+                />
+                <button
+                    className="serach-btn"
+                    onClick={() => {
+                        const filteredList = newRestroList.filter((data) => {
+                            const { info } = data || {};
+                            const { name } = info || {};
+                            return name.toLowerCase().includes(searchValue.toLowerCase());
+                        });
+                        setFilteredRestroList(filteredList);
+                    }}
+                >
+                    Search
+                </button>
                 <button
                     className="top-btn"
                     onClick={() => {
@@ -30,13 +52,13 @@ const BodyContainer = () => {
                             const { avgRating } = info || {};
                             return avgRating > 4.1;
                         });
-                        setNewRestroList(updatedList);
+                        setFilteredRestroList(updatedList);
                     }}>
                     Top Rated Restaurant
                 </button>
             </div>
             <div className="restro-data">
-                {newRestroList.map(data => <RestroCard key={data.info.id} restroInfo={data} />)}
+                {filteredRestroList.map(data => <RestroCard key={data.info.id} restroInfo={data} />)}
             </div>
         </div>
     )
