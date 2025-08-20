@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import RestroCard from "./RestroCard";
 import { restroData } from "../utils/mockData";
 import Shimmer from "./Shimmer"
+import { Link } from "react-router-dom";
 
 const BodyContainer = () => {
     const [newRestroList, setNewRestroList] = useState([]);
@@ -58,7 +59,11 @@ const BodyContainer = () => {
                 </button>
             </div>
             <div className="restro-data">
-                {filteredRestroList.map(data => <RestroCard key={data.info.id} restroInfo={data} />)}
+                {filteredRestroList.map(data => 
+                    <Link to={"/restro/"+data.info.id} key={data.info.id}>
+                        <RestroCard restroInfo={data} />
+                    </Link>
+                )}
             </div>
         </div>
     )

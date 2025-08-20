@@ -6,6 +6,7 @@ import ContactUs from "./components/ContactUs";
 import BodyContainer from "./components/BodyContainer";
 import ErrorComponent from "./components/ErrorComponent";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import RestroDetailedCard from "./components/RestroDetailedCard";
 
 const AppContainer = () => {
     return (
@@ -32,6 +33,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/contact",
                 element: <ContactUs />
+            },
+            {
+                path: "/restro/:resId",
+                element: <RestroDetailedCard />
             }
         ],
         errorElement: <ErrorComponent />
