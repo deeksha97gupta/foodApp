@@ -3,11 +3,14 @@ import RestroCard from "./RestroCard";
 import { restroData } from "../utils/mockData";
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const BodyContainer = () => {
     const [newRestroList, setNewRestroList] = useState([]);
-     const [filteredRestroList, setFilteredRestroList] = useState([]);
+    const [filteredRestroList, setFilteredRestroList] = useState([]);
     const [searchValue, setSearchValue] = useState('');
+
+    const onlineStatus = useOnlineStatus();
     useEffect(() => {
         fetchData();
     }, [])
@@ -20,6 +23,14 @@ const BodyContainer = () => {
         setNewRestroList(dynamicData);
         setFilteredRestroList(dynamicData);
     }
+    if (!onlineStatus) {
+       return (
+            <div>
+                <h1>Look like you are offline</h1>
+            </div>
+       )
+    }
+
     if (newRestroList.length === 0) {
        return <Shimmer />
     }
