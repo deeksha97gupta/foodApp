@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import AboutUs from "./components/AboutUs";
@@ -16,6 +16,8 @@ const AppContainer = () => {
        </div>
     )
 }
+
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const appRouter = createBrowserRouter([
     {
@@ -37,6 +39,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restro/:resId",
                 element: <RestroDetailedCard />
+            },
+            {
+                path: "/grocery",
+                element: <Suspense><Grocery /></Suspense>
             }
         ],
         errorElement: <ErrorComponent />
