@@ -4,8 +4,8 @@ const RestroCard = ({ restroInfo }) => {
     const { info } = restroInfo || {};
     const { name, cloudinaryImageId, avgRating } = info || {};
     return (
-        <div className="restro-card">
-            <img className="card-img" src={`${cardImgURl}${cloudinaryImageId}`} />
+        <div className="p-3 m-3 w-50 h-60 bg-gray-100">
+            <img className="w-50 h-40" src={`${cardImgURl}${cloudinaryImageId}`} />
             <hr />
             <div className="card-body">
                 <p>{name}</p>

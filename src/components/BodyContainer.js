@@ -39,12 +39,12 @@ const BodyContainer = () => {
             <div>
                 <input 
                     type="text"
-                    className="input-text"
+                    className="m-2 border "
                     value={searchValue}
                     onChange={(evt) => setSearchValue(evt.target.value)}
                 />
                 <button
-                    className="serach-btn"
+                    className="p-2 m-2 bg-pink-100 cursor-pointer"
                     onClick={() => {
                         const filteredList = newRestroList.filter((data) => {
                             const { info } = data || {};
@@ -57,7 +57,7 @@ const BodyContainer = () => {
                     Search
                 </button>
                 <button
-                    className="top-btn"
+                    className="p-2 m-2 bg-pink-100 cursor-pointer"
                     onClick={() => {
                         const updatedList = newRestroList.filter(data => {
                             const { info } = data || {};
@@ -69,7 +69,7 @@ const BodyContainer = () => {
                     Top Rated Restaurant
                 </button>
             </div>
-            <div className="restro-data">
+            <div className="flex flex-wrap">
                 {filteredRestroList.map(data => 
                     <Link to={"/restro/"+data.info.id} key={data.info.id}>
                         <RestroCard restroInfo={data} />

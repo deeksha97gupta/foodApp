@@ -1,4 +1,6 @@
-.header {
+@import "tailwindcss";
+
+/* .header {
     display: flex;
     justify-content: space-between;
     border: 1px solid #000000;
@@ -66,4 +68,4 @@ hr {
     padding: 10px;
     background: lightgrey;
     margin: 10px;
-}
+} */

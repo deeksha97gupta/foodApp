@@ -19,10 +19,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router": "6.4",
-    "react-router-dom": "6.4"
+    "react-router-dom": "6.4",
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "parcel": "^2.15.4"
