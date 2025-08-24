@@ -39,12 +39,12 @@ const BodyContainer = () => {
             <div>
                 <input 
                     type="text"
-                    className="m-2 border "
+                    className="m-2 border shadow-[0_4px_6px_rgba(0,0,0,0.2)]"
                     value={searchValue}
                     onChange={(evt) => setSearchValue(evt.target.value)}
                 />
                 <button
-                    className="p-2 m-2 bg-pink-100 cursor-pointer"
+                    className="p-2 m-2 bg-pink-100 cursor-pointer shadow-[0_4px_6px_rgba(0,0,0,0.2)]"
                     onClick={() => {
                         const filteredList = newRestroList.filter((data) => {
                             const { info } = data || {};
@@ -57,7 +57,7 @@ const BodyContainer = () => {
                     Search
                 </button>
                 <button
-                    className="p-2 m-2 bg-pink-100 cursor-pointer"
+                    className="p-2 m-2 bg-pink-100 cursor-pointer shadow-[0_4px_6px_rgba(0,0,0,0.2)]"
                     onClick={() => {
                         const updatedList = newRestroList.filter(data => {
                             const { info } = data || {};

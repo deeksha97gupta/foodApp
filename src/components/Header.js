@@ -5,7 +5,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
     const onlineStatus = useOnlineStatus();
     return (
-        <div className="flex justify-between bg-pink-50">
+        <div className="flex justify-between bg-pink-50 shadow-[0_4px_6px_rgba(0,0,0,0.2)]">
             <img className="w-30" src={logoURL} />
             <div className="flex flex-wrap content-center">
                 <h3 className="px-2.5">
