@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import Shimmer from "./Shimmer";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
-import ItemList from "./ItemLIst";
+import ItemList from "./ItemList";
 import { useState } from "react";
 
 const RestroDetailedCard = () => {
