@@ -1,12 +1,13 @@
 import { logoURL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import UserContext from "../utils/userContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
     const onlineStatus = useOnlineStatus();
+    const [isLogin, setIsLogin] = useState(true);
     const { loginUser } = useContext(UserContext);
     const cartItems = useSelector((state) => state.cart.items);
     return (
@@ -30,6 +31,13 @@ const Header = () => {
                 </h3>
                 <h3 className="px-2.5">
                     <Link to="/cart">Cart({cartItems.length})</Link>
+                </h3>
+                <h3 className="px-2.5">
+                    <button className="cursor-pointer"
+                        onClick={() => setIsLogin(!isLogin)}
+                    >
+                        {isLogin ? 'Login': 'Logout'}
+                    </button>
                 </h3>
                 <h3 className="px-2.5">{loginUser}</h3>
             </div>
