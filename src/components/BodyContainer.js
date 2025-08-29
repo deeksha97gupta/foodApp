@@ -39,6 +39,7 @@ const BodyContainer = () => {
             <div>
                 <input 
                     type="text"
+                    data-testid="searchInput"
                     className="m-2 border shadow-[0_4px_6px_rgba(0,0,0,0.2)]"
                     value={searchValue}
                     onChange={(evt) => setSearchValue(evt.target.value)}

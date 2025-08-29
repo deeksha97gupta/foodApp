@@ -6,6 +6,21 @@ import { BrowserRouter } from "react-router-dom";
 import '@testing-library/jest-dom';
 
 describe("header component", () => {
+    beforeAll(() => {
+        console.log('run before all test cases')
+    });
+
+    beforeEach(() => {
+        console.log('run before each test cases')
+    });
+
+    afterAll(() => {
+        console.log('run after all test cases')
+    });
+
+    afterEach(() => {
+        console.log('run after each test cases')
+    })
     it('should render header component with login button', () => {
         // render
         render(
